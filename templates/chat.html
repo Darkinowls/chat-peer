@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <article>
+        <script type="text/javascript">
+
+            const socket = io.connect();
+
+            function printMessage(message) {
+                $('#messages').append(message);
+                $('#messages').append('<br>').append('<hr style="width: 100%">')
+            }
+
+
+            $(document).ready(function () {
+
+                {#window.onbeforeunload = function () {
+                    socket.emit('leave_room', {
+                        name: "{{ name }}"
+                    });
+                    return "Leave"
+                };#}
+
+                socket.on('connect', function () {
+                    socket.emit('join_room', {
+                        name: "{{ name }}"
+                    });
+                });
+
+                $('#sendBtn').on('click', function () {
+                    let message = $('#message')
+                    if (message.length) {
+                        $('#messages').append('Me: ');
+                        socket.emit('send_message', {
+                            message: message.val(),
+                            name: "{{ name }}"
+                        })
+                        message.val('');
+                    }
+
+                });
+
+
+                socket.on('join_announce', function () {
+                    printMessage('User has connected the chat')
+                });
+
+
+                socket.on('receive_message', function (message) {
+                    printMessage(message)
+                });
+
+
+                socket.on('leave_announce', function () {
+                    printMessage('User has left the chat')
+                });
+
+            })
+
+        </script>
+        <div id="messages">
+
+        </div>
+
+        <span id="input-container">
+            <textarea id="message"></textarea>
+            <span>
+                <button id="sendBtn">Send</button>
+            </span>
+        </span>
+    </article>
+
+{% endblock %}

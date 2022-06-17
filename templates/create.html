@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if error_message %}
+        <script type="text/javascript">
+            alert("{{error_message}}")
+        </script>
+    {% endif %}
+
+    <form method="POST">
+        <div>
+            <label for="name-input"><b>Name of the chat</b>(don't use whitespace)</label>
+            <input id="name-input" type="text" name="name" minlength="3" maxlength="20" pattern="[^\s]+" required/>
+        </div>
+        <div><label for="description-input"><b>Description of the chat</b></label>
+            <textarea id="description-input" name="description" rows="4" cols="50" required></textarea>
+        </div>
+
+        <button type="submit">Create the chat</button>
+
+    </form>
+{% endblock %}

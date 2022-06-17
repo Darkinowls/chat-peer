@@ -1,0 +1,62 @@
+#table {
+    font-family: arial, sans-serif;
+    margin: 1em 0;
+    width: 100%;
+}
+
+#option_div {
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 8px;
+}
+
+#option_div > * {
+    padding: 8px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+form, article {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+form > div, article > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+#input-container {
+    display: flex;
+    align-items: center;
+}
+
+#input-container > textarea {
+    margin-right: 1em;
+    width: 80vmin;
+    height: 15vmin;
+}
+
+#messages {
+    border: outset;
+    width: 75%;
+    height: 20em;
+    overflow-y: scroll;
+    align-items: baseline;
+    padding: 8px;
+    overflow-wrap: anywhere;
+}

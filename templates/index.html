@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if error_message %}
+        <script type="text/javascript">
+            alert("{{error_message}}")
+        </script>
+    {% endif %}
+
+    <div id="option_div">
+        <input type="text" id="input" onkeyup="filterTable()" placeholder="Search for names.." title="Type in a name">
+        <button onclick="window.location.href='/create'">Create your chat!</button>
+    </div>
+    <table id="table">
+        <tr>
+            <th>
+                Chat name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Join the chat
+            </th>
+        </tr>
+        {% for _, row in table.iterrows() %}
+            <tr>
+                <td>
+                    {{ row['name'] }}
+                </td>
+                <td>
+                    {{ row['description'] }}
+                </td>
+                <td>
+                    <button type="button" onclick="window.location.href='/chat/{{ row['name'] }}'">Join chat!</button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
