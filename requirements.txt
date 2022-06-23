@@ -27,4 +27,4 @@ user-agents
 wheel
 wsproto
 gunicorn
-eventlet==0.33.0
+eventlet==0.30.2
