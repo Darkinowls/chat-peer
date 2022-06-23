@@ -26,5 +26,5 @@ ua-parser
 user-agents
 wheel
 wsproto
-gunicorn==20.1.0
+gunicorn
 eventlet==0.30.2

@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, join_room
 from pandas import DataFrame
 from SqliteManager import sqlite_manager
-import eventlet
-eventlet.monkey_patch()
 app = Flask(__name__)
 socketIO = SocketIO(app, cors_allowed_origins="*")
 
