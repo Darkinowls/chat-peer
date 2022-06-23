@@ -5,7 +5,7 @@
     <article>
         <script type="text/javascript">
 
-            const socket = io.connect();
+            const socket = io.connect('https://' + document.domain + ':' + location.port);
 
             function printMessage(message) {
                 $('#messages').append(message);
