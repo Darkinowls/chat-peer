@@ -5,7 +5,7 @@
     <article>
         <script type="text/javascript">
 
-            const socket = io.connect();
+            const socket = io.connect("https://my-chat-peer.herokuapp.com/");
 
             function printMessage(message) {
                 $('#messages').append(message);
