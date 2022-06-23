@@ -26,3 +26,4 @@ ua-parser
 user-agents
 wheel
 wsproto
+gunicorn
