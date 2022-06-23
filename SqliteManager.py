@@ -12,7 +12,7 @@ class SqliteManager:
 
     def __init__(self):
         self.chat_table = DataFrame()
-        self.engine = create_engine('sqlite:///exchanges.sqlite')
+        self.engine = create_engine('sqlite:///database/exchanges.sqlite')
         self.chat_table = pd.read_sql('chat_table', self.engine,
                                       columns=['name', 'description'])
 
