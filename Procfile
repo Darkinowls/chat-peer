@@ -1,1 +1,1 @@
-web: gunicorn --worker-class eventlet -w 1 my-chat-peer:app
+web: gunicorn --worker-class eventlet -w 1 app:app
