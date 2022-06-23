@@ -27,3 +27,4 @@ user-agents
 wheel
 wsproto
 gunicorn
+eventlet
