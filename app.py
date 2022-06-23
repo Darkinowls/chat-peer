@@ -4,7 +4,7 @@ from pandas import DataFrame
 from SqliteManager import sqlite_manager
 
 app = Flask(__name__)
-socketIO = SocketIO(app, cors_allowed_origins="*")
+socketIO = SocketIO(app, cors_allowed_origins="*", async_mode='gevent')
 
 
 @app.route('/')
