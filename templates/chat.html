@@ -30,7 +30,7 @@
 
                 $('#sendBtn').on('click', function () {
                     let message = $('#message')
-                    if (message.val().length) {
+                    if (message.val().trim().length) {
                         $('#messages').append('Me: ');
                         socket.emit('send_message', {
                             message: message.val(),
